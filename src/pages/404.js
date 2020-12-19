@@ -17,25 +17,24 @@ export default function Home({ data }) {
             border-bottom: 1px solid;
           `}
         >
-            Sorry. We couldnt find that page.        
+          Sorry. We couldnt find that page.
         </h1>
-        
       </div>
-      <Img fixed={data.file.childImageSharp.fixed} alt="yes"/>
+      <Img fixed={data.file.childImageSharp.fixed} alt="yes" />
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    site{
-      siteMetadata{
+    site {
+      siteMetadata {
         title
         description
         author
       }
     }
-    file(relativePath: {regex: "/avatar.jpg/"}) {
+    file(relativePath: { regex: "/avatar.jpg/" }) {
       childImageSharp {
         fixed {
           ...GatsbyImageSharpFixed
