@@ -1,13 +1,22 @@
 import React from "react"
 import { Global, css } from "@emotion/react"
-import { useStaticQuery, Link, graphql } from "gatsby"
-import { rhythm } from "../utils/typography"
+// import { useStaticQuery, graphql } from "gatsby"
+// import { rhythm } from "../utils/typography"
+import Navbar from "./bb/navbar"
+import { Link } from "gatsby"
 
 const globalCSS = css`
+  :root{
+      --primary: #3e3e3e; /* dark grey */
+      --primaryalt: 62, 62, 62; /* the same in RGB */
+      --secondary: #9c27b0 ; /* purple */
+      --secondaryalt: 156, 39, 176; /* RGB */
+      
+    }
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr min(60ch, calc(100% - 64px)) 1fr;
-    grid-column-gap: 32px;
+    grid-template-columns: 1fr min(60ch, calc(100% - 48px)) 1fr;
+    grid-column-gap: 24px;
   }
   .wrapper > * {
     grid-column: 2;
@@ -16,51 +25,21 @@ const globalCSS = css`
     width: 100%;
     grid-column: 1 / 4;
   }
-  .splash {
-    background-image: url("https://source.unsplash.com/random");
-    background-position: center;
-    background-size: cover;
-    height: 400px;
-  }
 `
 
 export default function Layout({ children }) {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `
-  )
   return (
     <div className="wrapper">
       <Global styles={globalCSS} />
-      <nav>
-        <Link
-          css={css`
-            margin: ${rhythm(1 / 2)} 0;
-            background-image: unset;
-          `}
-          to={`/`}
-        >
-          {data.site.siteMetadata.title}
-        </Link>
-        <Link
-          css={css`
-            margin: ${rhythm(1 / 2)} 0;
-            background-image: unset;
-          `}
-          to={`/about/`}
-        >
-          About
-        </Link>
-      </nav>
-      <div className="full-bleed splash" />
+      <Navbar>
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/#about">About</Link>
+          <Link to="/#contact">Contact</Link>
+        </div>
+      </Navbar>
       {children}
+      {/* <Footer/> */}
     </div>
   )
 }
