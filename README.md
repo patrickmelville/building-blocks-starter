@@ -13,7 +13,7 @@ Kick off your project with this starter project powered by Gatsby. This starter 
 
     ```shell
     # create a new Gatsby site using the hello-world starter
-    gatsby new building-blocks-starter https://github.com/.....
+    gatsby new building-blocks-starter https://github.com/patrickmelville/building-blocks-starter
     ```
 
 1.  **Start developing.**
