@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Splashimg from "../components/custom/splashimg"
@@ -18,12 +18,69 @@ export default function Home({ data }) {
   return (
     <Layout>
       <SEO title="" />
-      <Splashimg />
+      <Splashimg text="Building Blocks"/>
 
       <div id="section 1">
-        <h1>This is a title</h1>
-        <h2>This is a subtitle</h2>
-        <p>this is a block of text</p>
+        <h1>These are some Builing Blocks</h1>
+        <h2>That was an h1 tag & this is an h2 </h2>
+        <p>
+          This is a paragraph. Links inside of p tags have a special
+           style throught the site. <Link to="/#">Here is a link.
+           </Link> The rest of the building blocks below are custom 
+           react components that you can use and customize if needed.
+        </p>
+        
+        <h2>Smartgrid</h2>
+        <Smartgrid maxcolumns={3}>
+          <Card>
+            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <p>
+              These are cards in a Smartgrid component. 
+              The border attribute has been left off.
+            </p>
+            <Button value="click here" to="#"/>
+          </Card>
+          <Card>
+            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <p>
+              These are cards in a Smartgrid component. 
+              The border attribute has been left off.
+            </p>
+            <Button value="click here" to="#"/>
+          </Card>
+          <Card>
+            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <p>
+              These are cards in a Smartgrid component. 
+              The border attribute has been left off. asdf asdf asdf asdf asdf 
+            </p>
+            <Button value="click here" to="#"/>
+          </Card>
+        </Smartgrid>
+
+        <Smartgrid maxcolumns={2}>
+          <Card border>
+            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <p>
+              These are cards in a Smartgrid component. 
+              This cards include the border attribute. 
+            </p>
+            <Button value="click here" to="#"/>
+          </Card>
+          <Card border>
+            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <p>
+              These are cards in a Smartgrid component. 
+              This cards include the border attribute.
+              Here is a <Link to="/#">link.</Link>
+            </p>
+            <Button value="click here" to="#"/>
+          </Card>
+        </Smartgrid>
+
+        <h2>Slideshow</h2>
+        <Slideshow imagefilter="icon"/>
+
         <h2>A Basic Table</h2>
         <Table data={[
                       ["Thing#1", 2, "Apple"],
@@ -32,51 +89,15 @@ export default function Home({ data }) {
                     ]} 
         />
 
-        <h2>Smartgrid</h2>
-
-        <Smartgrid maxcolumns={3}>
-          <Card>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
-            These are cards in a Smartgrid component. They also include a border attribute.
-            <br/>
-            <Button value="click here" to="#"/>
-          </Card>
-          <Card>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
-            These are cards in a Smartgrid component. They also include a border attribute.
-            <br/>
-            <Button value="click here" to="#"/>
-          </Card>
-          <Card>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
-            These are cards in a Smartgrid component. They also include a border attribute.
-            <br/>
-            <Button value="click here" to="#"/>
-          </Card>
-        </Smartgrid>
-
-        <Smartgrid maxcolumns={2}>
-          <Card border>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
-            These are cards in a Smartgrid component. They also include a border attribute.
-            <br/>
-            <Button value="click here" to="#"/>
-          </Card>
-          <Card border>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
-            These are cards in a Smartgrid component. They also include a border attribute.
-            <br/>
-            <Button value="click here" to="#"/>
-          </Card>
-        </Smartgrid>
-
-        <h2>Slideshow</h2>
-        <Slideshow imagefilter="avatar"/>
-
         <h2>Forms</h2>
         <Form>
-          <input type="text" placeholder="text input" />
-          <textarea placeholder="textarea" />
+          <label htmlFor="item-1">Item 1</label>
+          <input type="text" placeholder="text input" id="item-1" />
+          
+          <label htmlFor="item-2">Item 2</label>
+          <textarea id="item-2" placeholder="textarea" />
+          
+          <Button id="submit" value="submit" />
         </Form>
         <h2>Loader Icon</h2>
         <Loader />
@@ -94,7 +115,7 @@ export const query = graphql`
         author
       }
     }
-    file(relativePath: { regex: "/avatar.jpg/" }) {
+    file(relativePath: { eq: "images/icon.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

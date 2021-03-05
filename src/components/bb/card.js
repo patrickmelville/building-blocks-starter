@@ -28,10 +28,11 @@ const bordered_card = css`
     margin: 0px 0px 12px;
     padding: 0px 12px 0px;
   }
-  a, button{
-    margin: 0px 12px 12px;
+  a:not(p > a), button:not(p > button){
+    display: block;
+    margin: 22px 12px 22px;
     padding: 8px 16px;
-  }
+  } 
 `;
 
 const borderless_card = css`

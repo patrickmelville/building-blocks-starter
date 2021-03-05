@@ -1,6 +1,6 @@
 import React from "react"
 // import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/react"
 // import { rhythm } from "../../utils/typography"
 
@@ -12,7 +12,7 @@ const css_base = css`
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr;
     gap: 24px 24px;
-    margin-top: 25px;
+    margin: 25px 0;
     }
     .nav-links > div{
       margin: 0 auto;

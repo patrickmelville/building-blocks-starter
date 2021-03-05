@@ -14,8 +14,8 @@ const bb_css = css`
   text-align: center;
 
   :hover, :focus {
-    filter: brightness(1.25);
-    box-shadow: 4px 5px 12px rgba(0,0,0,0.4);
+    filter: brightness(1.5);
+    box-shadow: 4px 5px 12px rgba(0,0,0,0.6);
   }
 `
 

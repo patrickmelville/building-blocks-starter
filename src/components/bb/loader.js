@@ -7,7 +7,7 @@ const bb_css = css`
   display: inline-block;
   border: 5px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 5px solid #3498db;
+  border-top: 5px solid var(--secondary); // standard blue #3498db;
   width: 22px;
   height: 22px;
   margin-left: 5px;

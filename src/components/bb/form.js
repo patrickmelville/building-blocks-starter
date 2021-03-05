@@ -2,28 +2,25 @@ import React from "react"
 import { css } from "@emotion/react"
 
 const bb_css = css`
-  *{
+  input, textarea{
     display: block;
+    position: relative;
     padding: 8px;
-    margin: 12px;
-    border: 1px solid #0000;
+    margin: 0 0 18px;
+    border: 2px solid #1113;
     border-radius: 8px;
     box-shadow: 0px 0px 4px #0006;
-    width:100%;
+    width:100%; 
+    transition: all 500ms;
+    outline: none;
+  }
+  input:focus, textarea:focus{
+    box-shadow: 0px 4px 14px rgba(62, 62, 62, 0.5);
+    border: 2px solid var(--secondary);
   }
 
-  [id=submit]{
-  padding: 8px 16px;
-  border: 0px;
-  color: rgb(233,233,233);
-  background-color: var(--primary);
-  outline: none;
-  transition: all 0.4s;
-  text-align: center;
-  }
-  [id=submit]:hover, [id=submit]:focus {
-    filter: brightness(1.5);
-    box-shadow: 4px 5px 12px rgba(0,0,0,0.4);
+  button{
+    width: 100%;
   }
 `;
 

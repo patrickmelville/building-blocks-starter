@@ -1,23 +1,40 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Splashimg from "../components/custom/splashimg"
-import Button from "../components/bb/button"
-import Table from "../components/bb/table"
 import Card from "../components/bb/card"
-// import Hero from "../components/bb/hero"
-// import { css } from "@emotion/react"
+import { css } from "@emotion/react"
 // import Img from "gatsby-image"
 
+const title = css`
+  padding: 0px !important;
+  * {
+    padding: 0 !important;
+    color: var(--primary) !important;
+  }
+  a:hover{
+    color: var(--secondary) !important;
+  }
+`;
 
 export default function Blog({ data }) {
   console.log(data)
   return (
     <Layout>
       <SEO title="" />
-      <Splashimg />
+      <Splashimg text="The Building Blocks Blog" />
       <h1>Blog Posts</h1>
+      { data.posts.edges.map((p)=>{
+        let post = p.node;
+        return(
+          <Card border>
+            <h2 css={title}><Link to={post.fields.slug}>{post.frontmatter.title}</Link></h2>
+            <p>{post.excerpt}</p>
+            <p><Link to={post.fields.slug}>Read more &gt;&gt;</Link></p>
+          </Card>
+        )
+      })}    
     </Layout>
   )
 }
@@ -31,14 +48,7 @@ export const query = graphql`
         author
       }
     }
-    file(relativePath: { regex: "/avatar.jpg/" }) {
-      childImageSharp {
-        fixed {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    posts: allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
