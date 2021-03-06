@@ -9,10 +9,10 @@ Kick off your project with this starter project powered by Gatsby. This starter 
 
 1.  **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+    Use the Gatsby CLI to create a new site, specifying the building-blocks-starter starter.
 
     ```shell
-    # create a new Gatsby site using the hello-world starter
+    # create a new Gatsby site using the building-blocks-starter starter
     gatsby new building-blocks-starter https://github.com/patrickmelville/building-blocks-starter
     ```
 
