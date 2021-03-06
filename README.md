@@ -34,6 +34,7 @@ Kick off your project with this starter project powered by Gatsby. This starter 
 1.  **Build a production ready version of the site**
 
     ```shell
+    gatsby clean (optional: deletes the entire public folder)
     gatsby build
     ```
 
