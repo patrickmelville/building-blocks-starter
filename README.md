@@ -1,6 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <h1 align="center">
-  Building Blocks Starter (/w Gatsby)
+  Building Blocks Starter (/w GatsbyJS)
 </h1>
 
 Kick off your project with this starter project powered by Gatsby. This starter ships with the main Gatsby configuration files and custom <u>Building Block</u> React components to get up and running.
