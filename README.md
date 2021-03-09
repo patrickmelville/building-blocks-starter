@@ -3,7 +3,18 @@
   Building Blocks Starter (/w GatsbyJS)
 </h1>
 
-Kick off your project with this starter project powered by Gatsby. This starter ships with the main Gatsby configuration files and custom <u>Building Block</u> React components to get up and running.
+Kick off your front end development with this starter project powered by Gatsby. This starter ships with the main Gatsby configuration files and custom <u>Building Block</u> React components to get up and running. This includes Gatsby plugins for Blogging w/ Markdown, SEO, Offline capabilities, and a basic & minimal design ready to be customized if necessary. 
+
+## Prerequisities
+
+Before you begin, It is assumed that you have a basic understanding of Node.js and Gatsby. Also, ensure you have installed the latest versions of: 
+* Node.js
+* Git
+* Gatsby CLI
+
+You can find more information about the installation process for these at [Gatsbyjs.com](https://www.gatsbyjs.com/docs/tutorial/part-zero/)
+
+
 
 ## 🚀 Quick start
 
@@ -12,7 +23,8 @@ Kick off your project with this starter project powered by Gatsby. This starter 
     Use the Gatsby CLI to create a new site, specifying the building-blocks-starter starter.
 
     ```shell
-    # create a new Gatsby site using the building-blocks-starter starter
+    # create a new Gatsby site using the building-blocks-starter project
+    # (the following will clone this repo on your machine)
     gatsby new building-blocks-starter https://github.com/patrickmelville/building-blocks-starter
     ```
 
@@ -39,3 +51,9 @@ Kick off your project with this starter project powered by Gatsby. This starter 
     ```
 
     building-blocks-starter/public will now have a production ready build of the site.
+
+---
+
+## Components
+
+Building Blocks includes the following prebuilt and styled components:
