@@ -43,6 +43,8 @@ You can find more information about the installation process for these at [Gatsb
 
     Your graphql info is available at `http://localhost:8000/___graphql`.
 
+    *** Don't forget to go through the `gatsby-config.js` file to modify the template placeholder info like the site name etc...
+
 1.  **Build a production ready version of the site**
 
     ```shell
@@ -57,3 +59,15 @@ You can find more information about the installation process for these at [Gatsb
 ## Components
 
 Building Blocks includes the following prebuilt and styled components:
+* Button
+* Card
+* Form
+* Hero
+* Loader
+* Navbar
+* Slideshow
+* Smartgrid
+* Table
+* Splashimg
+* Layout
+* SEO
