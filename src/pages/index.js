@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Splashimg from "../components/custom/splashimg"
@@ -10,7 +11,6 @@ import Smartgrid from "../components/bb/smartgrid"
 import Slideshow from "../components/bb/slideshow"
 import Loader from "../components/bb/loader"
 // import { css } from "@emotion/react"
-import Img from "gatsby-image"
 import Form from "../components/bb/form"
 
 export default function Home({ data }) {
@@ -22,7 +22,7 @@ export default function Home({ data }) {
 
       <div id="section 1">
         <h1>These are some Builing Blocks</h1>
-        <h2>That was an h1 tag & this is an h2 </h2>
+        <h2>That was an h1 tag &amp; this is an h2 </h2>
         <p>
           This is a paragraph. Links inside of p tags have a special
            style throught the site. <Link to="/#">Here is a link.
@@ -33,7 +33,7 @@ export default function Home({ data }) {
         <h2>Smartgrid</h2>
         <Smartgrid maxcolumns={3}>
           <Card>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <StaticImage src="../images/icon.png" alt="Building Blocks" layout="fullWidth"/>
             <p>
               These are cards in a Smartgrid component. 
               The border attribute has been left off.
@@ -41,7 +41,7 @@ export default function Home({ data }) {
             <Button value="click here" to="#"/>
           </Card>
           <Card>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <StaticImage src="../images/icon.png" alt="Building Blocks" layout="fullWidth"/>
             <p>
               These are cards in a Smartgrid component. 
               The border attribute has been left off.
@@ -49,7 +49,7 @@ export default function Home({ data }) {
             <Button value="click here" to="#"/>
           </Card>
           <Card>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <StaticImage src="../images/icon.png" alt="Building Blocks" layout="fullWidth"/>
             <p>
               These are cards in a Smartgrid component. 
               The border attribute has been left off. asdf asdf asdf asdf asdf 
@@ -60,7 +60,7 @@ export default function Home({ data }) {
 
         <Smartgrid maxcolumns={2}>
           <Card border>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <StaticImage src="../images/icon.png" alt="Building Blocks" layout="fullWidth"/>
             <p>
               These are cards in a Smartgrid component. 
               This cards include the border attribute. 
@@ -68,7 +68,7 @@ export default function Home({ data }) {
             <Button value="click here" to="#"/>
           </Card>
           <Card border>
-            <Img fluid={data.file.childImageSharp.fluid} alt="yes" />
+            <StaticImage src="../images/icon.png" alt="Building Blocks" layout="fullWidth"/>
             <p>
               These are cards in a Smartgrid component. 
               This cards include the border attribute.
@@ -113,13 +113,6 @@ export const query = graphql`
         title
         description
         author
-      }
-    }
-    file(relativePath: { eq: "images/icon.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

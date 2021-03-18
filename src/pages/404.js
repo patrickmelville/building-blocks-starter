@@ -3,7 +3,6 @@ import { css } from "@emotion/react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
 
 export default function Home({ data }) {
   console.log(data)
@@ -20,7 +19,6 @@ export default function Home({ data }) {
           Sorry. We couldnt find that page.
         </h1>
       </div>
-      <Img fixed={data.file.childImageSharp.fixed} alt="yes" />
     </Layout>
   )
 }
@@ -32,13 +30,6 @@ export const query = graphql`
         title
         description
         author
-      }
-    }
-    file(relativePath: { regex: "/avatar.jpg/" }) {
-      childImageSharp {
-        fixed {
-          ...GatsbyImageSharpFixed
-        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

@@ -1,8 +1,8 @@
 import React from "react"
 import { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getSrc } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
-import Img from "gatsby-image"
 
 const slideshow_container = css`
     position: relative;
@@ -92,18 +92,15 @@ const slideshow_container = css`
 export default function Slideshow(props) {
     const data = useStaticQuery(graphql`
     query {
-        allImageSharp {
-          edges {
-            node {
-              fluid(maxWidth: 960) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
+      allImageSharp {
+        nodes {
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
         }
       }
+    }
     `)
-  const imageList = data.allImageSharp.edges.filter(e => e.node.fluid.src.includes(props.imagefilter));
+  const imageList = data.allImageSharp.nodes.filter(e => getSrc(e.gatsbyImageData).includes(props.imagefilter));
+  console.log(imageList)
   let currentSlide = 4;
   
   // SECTION slideshow controls...
@@ -136,7 +133,7 @@ export default function Slideshow(props) {
       <div css={slideshow_container}>
         {imageList.map( (image, index, arr) =>
             <div key={index} className="mySlides fade">
-                <Img fluid={image.node.fluid} />
+                <GatsbyImage image={image.gatsbyImageData} alt="test" />
                 <div className="text">{index + 1} / {arr.length}</div>
             </div>
         )}

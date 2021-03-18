@@ -5,6 +5,7 @@ module.exports = {
     author: `Patrick M`,
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {

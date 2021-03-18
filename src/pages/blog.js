@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 import Splashimg from "../components/custom/splashimg"
 import Card from "../components/bb/card"
 import { css } from "@emotion/react"
-// import Img from "gatsby-image"
 
 const title = css`
   padding: 0px !important;
